@@ -28,6 +28,7 @@ export default{
             .then(response=> {
                 if (response.status==201) {
                     this.item.name="";
+                    this.$emit('reloadlist');
                 }
             })
             .catch(error=> {
