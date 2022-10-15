@@ -2,11 +2,16 @@ require('./bootstrap');
 
 import { createApp } from 'vue'
 import App from './vue/app'
-export const eventBus = createApp(App)
-createApp(App).mount('#app')
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faPlusSquare, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-mix.js('resources/js/app.js', 'public/js')
-    .vue()
-    .postCss('resources/css/app.css', 'public/css', [
-        //
-    ]).vue();
+library.add(faPlusSquare, faTrash)
+
+const app = createApp(App)
+
+app.component('font-awesome-icon', FontAwesomeIcon)
+
+app.config.productionTip = false
+
+app.mount('#app')
