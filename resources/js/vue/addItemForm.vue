@@ -23,6 +23,7 @@ export default{
                 return;
             }
             axios.post('api/item/store', {
+                headers:{"Content-Type" : "application/json"},
                 item: this.item
             })
             .then(response=> {
