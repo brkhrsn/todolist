@@ -13,7 +13,8 @@
             <p class="lead">Uygulamayı kullanmak için lütfen giriş yapınız.</p>
         @endguest
     </div>
-    <script src="{{mix('js/app.js')}}">
 
-    </script>
 @endsection
+<script src="{{mix('js/app.js')}}">
+
+</script>
